@@ -11,13 +11,16 @@ for the book  **"Structure and interpretation of computer programs"** by **H. Ab
 [oneline interactive version](https://xuanji.appspot.com/isicp/)  
 
 
-## a`uxiliary
-[scheme-wiki](http://community.schemewiki.org/)  
-[some usefull thoughts about scip (and a few solutions to exercises)](https://tekkie.wordpress.com/)  
+## some tips and tricks
+[Lets Do Sicp](https://functionalcs.github.io/curriculum/sicp.html)
+
+
+## auxiliary
+[scheme-wiki](http://community.schemewiki.org/)
 
 
 ## solutions:
-[scheme-wiki](http://community.schemewiki.org/?SICP-Solutions)  
+[some usefull thoughts about scip (and a few solutions to exercises)](https://tekkie.wordpress.com/)  
 [scheme-drewhess.com](http://wiki.drewhess.com/wiki/Category:SICP_solutions)  
 [solutions from Adrian Stoll](https://adrianstoll.com/sicp/)  
 [another person's solutions](https://www.inchmeal.io/)  
