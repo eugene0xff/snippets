@@ -11,36 +11,37 @@ for the book  **"Structure and interpretation of computer programs"** by **H. Ab
 [oneline interactive version](https://xuanji.appspot.com/isicp/)  
 
 
-## some tips and tricks
+## solutions
 [Lets Do Sicp](https://functionalcs.github.io/curriculum/sicp.html)
-
-
-## auxiliary
-[scheme-wiki](http://community.schemewiki.org/)
-
-
-## solutions:
-[some usefull thoughts about scip (and a few solutions to exercises)](https://tekkie.wordpress.com/)  
-[scheme-drewhess.com](http://wiki.drewhess.com/wiki/Category:SICP_solutions)  
-[solutions from Adrian Stoll](https://adrianstoll.com/sicp/)  
-[another person's solutions](https://www.inchmeal.io/)  
+[another person's solutions](https://www.inchmeal.io/)
+[solutions in racket](https://wizardbook.wordpress.com/solutions-index/)
 [solutions from Eli Bendersky](https://eli.thegreenplace.net/tag/sicp)  
-[solutions form Brad Richardson](https://gitlab.com/everythingfunctional/SICP-Solutions)  
-[solutions in racket](https://wizardbook.wordpress.com/solutions-index/)  
-[solution on codology](https://codology.net/)  
+
+
+## only partial solutions
 [solutions from qiao](https://github.com/qiao/sicp-solutions)  
 [solutions from sarabander](https://github.com/sarabander/p2pu-sicp)  
+[solutions from zv](http://zv.github.io/)
+
+
+## some snippets for solutions
+[solutions form Brad Richardson](https://gitlab.com/everythingfunctional/SICP-Solutions)  
 [solutions from Ken Dyck](https://kendyck.com/?s=SICP)  
-[solutions from zv](http://zv.github.io/)  
+[some usefull thoughts about scip (and a few solutions to exercises)](https://tekkie.wordpress.com/)  
+[solutions from Paige Finkelstein (only for the first chapter)](https://github.com/bolducp/SICP)  
+
+
+## some links are not correct:
+[scheme-wiki](http://community.schemewiki.org/)
 [solutions from Dan Boykis](http://danboykis.com/categories/sicp/)  
 [solutions from Alex Grebenyuk](https://github.com/kean/SICP)  
-[solutions from Paige Finkelstein (only for the first chapter)](https://github.com/bolducp/SICP)  
-[solutions with comments on russian](http://sicp.sergeykhenkin.com/)  
-
-some links are not correct:  
+[solution on codology](https://codology.net/)  
+[solutions from Adrian Stoll](https://adrianstoll.com/sicp/)  
+[scheme-drewhess.com](http://wiki.drewhess.com/wiki/Category:SICP_solutions)  
 [solutions from JoT](http://jots-jottings.blogspot.com/p/sicp-exercise-index.html)  
 [solutions from evarga](https://evarga.gitbooks.io/solutions-guide-for-the-sicp-book/content/)  
 [other solutions from evarga](https://github.com/evarga/sicp-solutions)  
+[solutions with comments on russian](http://sicp.sergeykhenkin.com/)  
 
 
 ## other programming lang adoptions
