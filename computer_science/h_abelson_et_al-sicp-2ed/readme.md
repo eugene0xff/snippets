@@ -4,35 +4,29 @@
 this subfolder contains my files (my code snippets and my synopses about the main book's topics) 
 for the book  **"Structure and interpretation of computer programs"** by **H. Abelson**, **G.J. Sussman**, **Julie Sussman**
 
-![SICP book cover](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/cover.jpg "SICP book cover")
+![SICP book cover](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/graphics/main-banner.gif)
 
-[online version](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)  
-[online version (contents)](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-4.html)  
-[oneline interactive version](https://xuanji.appspot.com/isicp/)  
+[online version](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html)
 
 
-## solutions
+## solutions and tips and tricks
 [Lets Do Sicp](https://functionalcs.github.io/curriculum/sicp.html)
-[another person's solutions](https://www.inchmeal.io/)
-[solutions in racket](https://wizardbook.wordpress.com/solutions-index/)
 [solutions from Eli Bendersky](https://eli.thegreenplace.net/tag/sicp)  
 
 
-## only partial solutions
+## other resources
+[mk12](https://mk12.github.io/sicp)
+[sicp-solutions](https://sicp-solutions.net)
+[panadestein](https://panadestein.github.io/solved-sicp/index.html)
+[another person's solutions](https://www.inchmeal.io/)
+[solutions in racket](https://wizardbook.wordpress.com/solutions-index/)
 [solutions from qiao](https://github.com/qiao/sicp-solutions)  
 [solutions from sarabander](https://github.com/sarabander/p2pu-sicp)  
 [solutions from zv](http://zv.github.io/)
-
-
-## some snippets for solutions
 [solutions form Brad Richardson](https://gitlab.com/everythingfunctional/SICP-Solutions)  
 [solutions from Ken Dyck](https://kendyck.com/?s=SICP)  
 [some usefull thoughts about scip (and a few solutions to exercises)](https://tekkie.wordpress.com/)  
 [solutions from Paige Finkelstein (only for the first chapter)](https://github.com/bolducp/SICP)  
-
-
-## some links are not correct:
-[scheme-wiki](http://community.schemewiki.org/)
 [solutions from Dan Boykis](http://danboykis.com/categories/sicp/)  
 [solutions from Alex Grebenyuk](https://github.com/kean/SICP)  
 [solution on codology](https://codology.net/)  
