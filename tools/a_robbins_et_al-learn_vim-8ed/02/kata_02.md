@@ -1,0 +1,21 @@
+# Kata - Movement by text block
+text:
+```
+cursor, delete lines, insert characters,
+cursor, delete lines, insert characters,
+```
+
+kata:
+- ESC
+- `1G`
+- `w`, `r`, type '.', `u`
+- `w`, `w`, `w`, `r`, type '.', `u`
+- `w`, `w`, `w`, `r`, type '.', `u`
+
+
+- `2G`
+- `r`, type 'C', `u`
+- `W`, `r`, type 'D', `u`
+- `W`, `r`, type 'L', `u`
+- `W`, `r`, type 'I', `u`
+- `W`, `r`, type 'C', `u`

@@ -1,0 +1,2 @@
+cursor, delete lines, insert characters,
+cursor, delete lines, insert characters,

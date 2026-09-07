@@ -1,0 +1,8 @@
+You can move text by deleting it and then,
+like a "cut and paste,"
+placing the deleted text elsewhere in the file.
+each time you delete a text block.
+mvoe
+
+
+
