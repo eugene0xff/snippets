@@ -1,0 +1,16 @@
+# base settings
+* text eol=lf
+
+# settings for microsoft projects (c++, c#)
+*.sln text eol=crlf
+*.vcxproj
+*.vcxproj.filters
+*.cs text eol=crlf
+*.csproj text eol=crlf
+
+# setings bin files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.bmp binary
+
