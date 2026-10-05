@@ -1,0 +1,220 @@
+<html>
+<head>
+    <title>06</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript"> 
+    window.onload = function() {
+        // Methods
+        console.log("[Methods] =>");
+        {
+            {
+                let rabbit = {};
+                rabbit.speak = function(line) {
+                    console.log(`The rabbit says '${line}'`);
+                };
+ 
+                rabbit.speak("I'm alive.");
+            }
+ 
+            {
+                function speak(line) {
+                    console.log(`Then ${this.type} rabbit says '${line}'`);
+                }
+ 
+                let whiteRabbit = { type: "white", speak };
+                let hungryRabbit = { type: "hungry", speak };
+                whiteRabbit.speak("Oh my ears and whiskers, " +
+                                  "how late it's getting!");
+                hungryRabbit.speak("I could use a carrot right now.");
+
+                speak.call(hungryRabbit, "Burp!");
+            }
+
+            function normalize() {
+                console.log(this.coords.map(n => n / this.length));
+            }
+            normalize.call({ coords: [0, 2, 3], length: 5 });
+        }
+        console.log("\n\n");
+
+        // Prototypes
+        console.log("[Prototypes] =>");
+        {
+            let empty = {};
+            console.log(empty.toString);
+            console.log(empty.toString());
+
+            console.log(Object.getPrototypeOf({}) == Object.prototype);
+            console.log(Object.getPrototypeOf(Object.prototype));
+
+            console.log(Object.getPrototypeOf(Math.max) == Function.prototype);
+            console.log(Object.getPrototypeOf([]) == Array.prototype);
+
+            let protoRabbit = {
+                speak(line) {
+                    console.log(`The ${this.type} rabbit says '${line}'`);
+                }
+            };
+            let killerRabbit = Object.create(protoRabbit);
+            killerRabbit.type = "killer";
+            killerRabbit.speak("SKREEEE!");
+
+            function makeRabbit(type) {
+                let rabbit = Object.create(protoRabbit);
+                rabbit.type = type;
+                return rabbit;
+            }
+            let regularRabbit = makeRabbit("regular");
+            regularRabbit.speak("12345");
+
+            function Rabbit(type) {
+                this.type = type;
+            };
+            Rabbit.prototype.speak = function(line) {
+                console.log(`Then ${this.type} rabbit says '${line}'`);
+            };
+            let weirdRabbit = new Rabbit("weird");
+            weirdRabbit.speak("12345");
+
+            console.log(Object.getPrototypeOf(Rabbit) == 
+                        Function.prototype);
+            console.log(Object.getPrototypeOf(weirdRabbit) ==
+                        Rabbit.prototype);
+        }
+        console.log("\n\n");
+
+        // Class Notation
+        console.log("[Class notation] =>");
+        {
+            class Rabbit {
+                constructor(type) {
+                    this.type = type;
+                }
+                speak(line) {
+                    console.log(`The ${this.type} rabbit says '${line}'`);
+                }
+            }
+            let killerRabbit = new Rabbit("killer");
+            let blackRabbit = new Rabbit("black");
+
+            killerRabbit.speak("line for the killer rabbit");
+            blackRabbit.speak("line for the black rabbit");
+
+            let object = new class { getWord() { return "hello"; } };
+            console.log(object.getWord());
+        }
+        console.log("\n\n");
+
+        // Overriding derived properties
+        console.log("[Overriding derived properties] =>");
+        {
+            class Rabbit {
+                constructor(type) {
+                    this.type = type;
+                }
+                speak(line) {
+                    console.log(`The ${this.type} rabbit says '${line}'`);
+                }
+            }
+
+            let killerRabbit = new Rabbit("killer");
+            let blackRabbit = new Rabbit("black");
+
+            Rabbit.prototype.teeth = "small";
+            console.log(killerRabbit.teeth);
+
+            killerRabbit.teeth = "long, sharp, and bloddy";
+            console.log(killerRabbit.teeth);
+
+            console.log(blackRabbit.teeth);
+
+            console.log(Rabbit.prototype.teeth);
+
+            console.log(Array.prototype.toString ==
+                        Object.prototype.toString);
+            console.log([1, 2].toString());
+
+            console.log(Object.prototype.toString.call([1, 2]));
+        }
+        console.log("\n\n");
+
+        // Maps
+        console.log("[Maps] =>");
+        {
+            let ages = {
+                Boris: 39,
+                Liang: 22,
+                Julia: 62
+            };
+
+            console.log(`Julia is ${ages["Julia"]}`);
+            console.log("Is Jack's age known?", "Jack" in ages);
+            console.log("Is toString's age known?", "toString" in ages);
+ 
+            console.log("toString" in Object.create(null));
+
+            let ages2 = new Map();
+            ages2.set("Boris", 39);
+            ages2.set("Liang", 22);
+            ages2.set("Julia", 62);
+ 
+            console.log(`Julia is ${ages2.get("Julia")}`);
+            console.log("Is Jack's age known?", ages2.has("Jack"));
+            console.log(ages2.has("toString"));
+
+            console.log({x: 1}.hasOwnProperty("x"));
+            console.log({x: 1}.hasOwnProperty("toString"));
+        }
+        console.log("\n\n");
+
+        // Polymorphism
+        console.log("[Polymorphism] =>");
+        {
+            function Rabbit(type) {
+                this.type = type;
+            }
+            Rabbit.prototype.speak = function(line) {
+                console.log(`Then ${this.type} rabbit says '${line}'`);
+            }
+            let blackRabbit = new Rabbit("black");
+
+            Rabbit.prototype.toString = function() {
+                return `a ${this.type} rabbit`;
+            }
+            console.log(String(blackRabbit));
+        }
+        console.log("\n\n");
+
+        // Symbols
+        console.log("[Symbols] =>");
+        {
+            function Rabbit(type) {
+                this.type = type;
+            }
+            Rabbit.prototype.speak = function(line) {
+                console.log(`Then ${this.type} rabbit says '%{line}'`);
+            }
+            let blackRabbit = new Rabbit("black");
+
+            let sym = Symbol("name");
+            console.log(sym == Symbol("name"));
+            Rabbit.prototype[sym] = 55;
+            console.log(blackRabbit[sym]);
+            
+            const toStringSymbol = Symbol("toString");
+            Array.prototype[toStringSymbol] = function() {
+                return `${this.length} cm of blue yarn`;
+            }
+            console.log([1, 2].toString());
+            console.log([1, 2][toStringSymbol]());
+
+            let stringObject = {
+                [toStringSymbol]() { return "a jute rope"; }
+            };
+            console.log(stringObject[toStringSymbol]());
+        }
+    }
+    </script>
+</head>
+<body>
+</body>

@@ -1,0 +1,341 @@
+<html>
+<head>
+	<title>04_exercises</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script type="text/javascript"> 
+	window.onload = function() {
+        // the sum of range
+        console.log("[the sum of range] =>\n");
+        {
+            function range(start, stop) {
+                ret = [];
+                for (let num = start; num <= stop; num++) {
+                    ret.push(num);
+                }
+                return ret;
+            }
+            console.log(range(1, 10));
+            
+            function sum(nums) {
+                ret = 0;
+                for (let num of nums) {
+                    ret += num;
+                }
+                return ret;
+            }
+            console.log(sum([1, 2, 3]));
+            console.log(sum(range(1, 10)));
+            
+            function rangeByStep(start, stop, step = 1) {
+                if (step === 0)
+                    return [];
+                                
+                if ((start < stop && step < 0) ||
+                    (start > stop && step > 0))
+                {
+                    return [];
+                }
+                
+                ret = [];                
+                for (let num = start;
+                     start < stop ? num <= stop : num >= stop;
+                     num += step)
+                {
+                    ret.push(num);
+                }
+                return ret;
+            }
+            console.log(rangeByStep(1, 10, 2));
+            console.log(sum(rangeByStep(1, 10, 2)));
+            console.log(rangeByStep(5, 2, -1));
+            console.log(rangeByStep(5, 2, -1));
+            
+            // ex cases
+            console.log(rangeByStep(-5, 2));
+            console.log(rangeByStep(2, 5));
+            console.log(rangeByStep(5, 2));
+            console.log(rangeByStep(2, -5));
+            console.log(rangeByStep(2, 5, 0));
+        }
+       
+        // author's soluion
+        console.log("\n\n[author's solution] =>\n");
+		{
+			function range(start, end, step = start < end ? 1 : -1) {
+				let array = [];
+				
+				for (let i = start; (step > 0 ? i <= end : i >= end); i += step)
+					array.push(i);
+					
+				return array;
+			}
+			
+			function sum(array) {
+				let total = 0;
+				for (let value of array)
+					total += value;
+				return total;
+			}
+			
+			console.log(range(1, 10));
+			console.log(range(5, 2, -1));
+			console.log(sum(range(1, 10)));
+		}
+				
+		// reversing an array
+		console.log("\n\n[reversing an array] =>\n");
+		{
+			function reverseArray(array) {
+				if (array.legnth === 0)
+					return [];
+					
+				ret = [];
+				for (let i = array.length - 1; i >= 0; i--) 
+					ret.push(array[i]);
+				return ret;
+			}
+			
+			console.log(reverseArray([1, 2, 3, 4, 5]));
+			console.log(reverseArray([1, 2, 3, 4]));
+			console.log(reverseArray([1]));
+			console.log(reverseArray([]));
+			
+			function reverseArrayInPlace(array) {
+				for (let i = 0; i < array.length / 2; i++) {
+					let left = i, right = array.length - 1 - i;
+					
+					// swap
+					let tmp = array[left]
+					array[left] = array[right];
+					array[right] = tmp;
+				}
+				
+				return array;
+			}
+			
+			let array = [1, 2, 3, 4, 5];
+			reverseArrayInPlace(array);
+			console.log(array);
+			
+			array = [1, 2, 3, 4];
+			reverseArrayInPlace(array);
+			console.log(array);
+			
+			array = [1];
+			reverseArrayInPlace(array);
+			console.log(array);
+			
+			array = [];
+			reverseArrayInPlace(array);
+			console.log(array);
+			
+			//std 
+			console.log([1, 2, 3, 4, 5].reverse());
+			console.log([1, 2, 3, 4].reverse());
+			console.log([1, 2].reverse());
+			console.log([1].reverse());
+			console.log([].reverse());
+		}
+		
+		// author's solution
+		console.log("\n\n[author's solution] =>\n");
+		{
+			function reverseArray(array) {
+				let output = [];
+				for (let i = array.length - 1; i >= 0; i--) {
+					output.push(array[i]);
+				}
+				return output;
+			}
+			
+			function reverArrayInPlace(array) {
+				for (let i = 0; i < Math.floor(array.length / 2); i++) {
+					let old = array[i];
+					array[i] = array[array.legnth - 1 - i];
+					array[array.length - 1 - i] = old;
+				}
+				return array;
+			}
+			
+			console.log(reverseArray(["A", "B", "C"]));
+			let arrayValue = [1, 2, 3, 4, 5];
+			reverseArrayInPlace(arrayValue);
+			console.log(arrayValue);
+		}
+		
+		// a list
+		console.log("\n\n[a list] =>\n");
+		{
+			function arrayToList(array) {
+				let list = null;
+				for (let element of array.reverse()) {
+					list = {value:element, rest: list};
+				}
+				return list;
+			}
+			
+			console.log(arrayToList([]));
+			console.log(arrayToList([1]));
+			console.log(arrayToList([1, 2, 3]));
+			
+			function listToArray(list) {
+				let array = [];
+				
+				let head = list;
+				while (head != null) {
+					array.push(head.value);
+					head = head.rest;
+				}
+				
+				return array;
+			}
+			
+			console.log(listToArray(arrayToList([])));
+			console.log(listToArray(arrayToList([1])));
+			console.log(listToArray(arrayToList([1, 2, 3])));
+			
+			function prepend(item, list) { return {value: item, rest: list} };
+			console.log(listToArray(prepend(-1, arrayToList([]))));
+			console.log(listToArray(prepend(-1, arrayToList([1]))));
+			console.log(listToArray(prepend(-1, arrayToList([1, 2, 3]))));
+			
+			// an iterative version
+			function nth(list, n) {
+				let head = list;
+				for (let i = n; i > 0; i--)
+					if (head) 
+						head = head.rest;
+				
+				return (head == null ? undefined : head.value);
+			}
+			console.log(nth(arrayToList([1, 2, 3]), 0));
+			console.log(nth(arrayToList([1, 2, 3]), 1));
+			console.log(nth(arrayToList([1, 2, 3]), 2));
+			console.log(nth(arrayToList([1, 2, 3]), 3));
+			console.log(nth(arrayToList([]), 0));
+			console.log(nth(arrayToList([]), 1));
+			console.log(nth(null, 0));
+			console.log(nth(null, 1));
+			
+			function recur_nth(list, n) {
+				return (list == null 
+					? undefined
+					: (n == 0) ? list.value : recur_nth(list.res, n - 1));
+			}
+			console.log(recur_nth(arrayToList([1, 2, 3]), 0));
+			console.log(nth(arrayToList([1, 2, 3]), 1));
+			console.log(nth(arrayToList([1, 2, 3]), 2));
+			console.log(nth(arrayToList([]), 0));
+			console.log(nth(arrayToList([]), 1));
+			console.log(nth(null, 0));
+			console.log(nth(null, 1));
+		}
+		
+		// author's solution
+		console.log("\n\n[author's solution] =>\n");
+		{
+			function arrayToList(array) {
+				let list = null;
+				for (let i = array.length - 1; i >= 0; i--) {
+					list = {value: array[i], rest: list};
+				}
+				return list;
+			}
+			
+			function listToArray(list) {
+				let array = [];
+				for (let node = list; node; node = node.rest) {
+					array.push(node.value);
+				}
+				return array;
+			}
+			
+			function prepend(value, list) {
+				return {value, rest: list};
+			}
+			
+			function nth(list, n) {
+				if (!list)
+					return undefined;
+				else if (n == 0) 
+					return list.value;
+				else
+					return nth(list.rest, n - 1);
+			}
+			
+			console.log(arrayToList([10, 20]));
+			console.log(listToArray(arrayToList([10, 20, 30])));
+			console.log(prepend(10, prepend(20, null)));
+			console.log(nth(arrayToList([10, 20, 30]), 1));
+		}
+        
+        // Ex 4: deep comparison
+		console.log("\n\n[Ex 4: Deep comparison] =>\n");
+        {
+            function deepEqual(lhs, rhs) {
+                if (lhs === null)
+                    return rhs === null;
+                    
+                if ("object" !== typeof lhs)
+                    return ("object" === typeof rhs ? false : lhs === rhs);
+                    
+                if ("object" !== typeof rhs)
+                    return false
+                    
+                for (let prop of Object.keys(lhs)) {
+                    if (!Object.hasOwn(rhs, prop)) {
+                        return false
+                    }
+                    
+                    if (!deepEqual(lhs[prop], rhs[prop])) {
+                        return false
+                    }
+                }
+                
+                return true
+            }
+       
+            console.log(true === deepEqual(17, 17));
+            console.log(false === deepEqual(17, 42));
+            console.log(false === deepEqual(null, 17));
+           
+            console.log(true === deepEqual({ val1: "val1", val2: "val2" }, { val1: "val1", val2: "val2" }));
+            console.log(false === deepEqual(17, { val1: "val1", val2: "val2" }));
+            console.log(false === deepEqual(null, { val1: "val1", val2: "val2" }));
+        }
+        
+        // Ex 4: deep comparison (author's solution)
+        console.log("\n\n[Ex 4: Deep comparison (author's solution)] =>\n");
+        {
+            function deepEqual(a, b) {
+                if (a === b) 
+                    return true;
+                
+                if (a == null || typeof a != "object" ||
+                    b == null || typeof b != "object")
+                {
+                    return false;
+                }
+                
+                let keysA = Object.keys(a), keysB = Object.keys(b);
+                
+                if (keysA.length != keysB.length)
+                    return false;
+                    
+                for (let key of keysA)
+                    if (!keysB.includes(key) || !deepEqual(a[key], b[key]))
+                        return false;
+                        
+                return true;
+            }
+            
+            let obj = { here: { is: "an" }, object: 2 };
+            console.log(true === deepEqual(obj, obj));
+            console.log(false === deepEqual(obj, { here: 1, object: 2 }));
+            console.log(true === deepEqual(obj, { here: { is: "an" }, object: 2 }));
+        }
+	}
+	</script>
+</head>
+<body>
+</body>

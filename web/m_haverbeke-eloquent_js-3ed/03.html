@@ -1,0 +1,316 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>03</title>
+
+    <script type="text/javascript"> 
+    window.onload = function() {
+        // defining a function
+        console.log("defining a function ->\n");
+        {
+            const square = function(x) {
+                return x * x;
+            };
+            
+            console.log(square(12));
+            
+            const makeNoise = function() {
+                console.log("Pling!");
+            };
+            makeNoise();
+            
+            const power = function(base, exponent) {
+                let result = 1;
+                for (let count = 0; count < exponent; count++) {
+                    result *= base;
+                }
+                return result;
+            };
+            console.log(power(2, 10));
+        }
+        console.log("\n");
+
+        // bindings and scopes
+        console.log("bindings and scopes ->\n");
+        {
+            let x = 10;
+            if (true) {
+                let y = 20;
+                var z = 30;
+                console.log(x + y + z);
+            }
+            console.log(x + z);
+            
+            const halve = function(n) {
+                return n / 2;
+            }
+            
+            let n = 10;
+            console.log(halve(100));
+            
+            console.log(n);
+        }
+        console.log("\n");
+        
+        // nested scope
+        console.log("nested scope ->\n");
+        {
+            const hummus = function(factor) {
+                const ingredient = function(amount, unit, name) {
+                    let ingredientAmount = amount * factor;
+                    if (ingredientAmount > 1) {
+                        unit += "s";
+                    }
+                    console.log(`${ingredientAmount} ${unit} ${name}`);
+                }
+                
+                ingredient(1, "can", "chickpeas");
+                ingredient(0.25, "cup", "tahini");
+                ingredient(0.25, "cup", "lemon juice");
+                ingredient(0.25, "clove", "garlic");
+                ingredient(1, "clove", "garlic");
+                ingredient(2, "tablespoon", "olive oil");
+                ingredient(0.5, "teaspoon", "cumin");
+            }
+            
+            hummus(42);
+        }
+        console.log("\n");
+        
+        // functions as values
+        console.log("functions as values\n");
+        {
+            let launchMissiles = function() {
+                console.log("now");
+            };
+            
+            let safeMode = true;
+            if (safeMode) {
+                launchMissiles = function() { console.log("not now"); }
+            }
+            
+            launchMissiles();
+        }
+        console.log("\n");
+
+        // declaration notation
+        console.log("declaration notation ->\n");
+        {
+            console.log("The future says: ", future());
+            
+            function future() {
+                return "You'll never have flying cars";
+            }
+        }
+        console.log("\n");
+
+        // arrow functions
+        console.log("arrow functions ->\n");
+        {
+            const power = (base, exponent) => {
+                let result = 1;
+                for (let count = 0; count < exponent; count++) {
+                    result *= base;
+                }
+                return result;
+            };
+            
+            console.log(power(2, 10));
+            
+            const square1 = (x) => { return x * x; };
+            const square2 = x => x * x;
+            
+            console.log(square1(42));
+            console.log(square2(42));
+            
+            const horn = () => {
+                console.log("Toot");
+            }
+            horn();
+        }
+        console.log("\n");
+
+        // the call stack
+        console.log("the call stack ->\n");
+        {
+            function greet(who) {
+                console.log("Hello " + who);
+            }
+            greet("Harry");
+            console.log("Bye");
+            
+            function chicken() {
+                return egg();
+            }
+            
+            function egg() {
+                return chicken();
+            }
+            
+            //console.log(chicken() + " came first.");
+        }
+        console.log("\n");
+
+        // optional arguments
+        console.log("optinal arguments ->\n");
+        {
+            function square(x) { return x * x; }
+            console.log(square(4, true, "hedgehog"));
+
+            function minus(a, b) {
+                if (b === undefined)
+                    return -a;
+                else
+                    return a - b;
+            }
+            console.log(minus(10));
+            console.log(minus(10, 5));
+
+            function power(base, exponent = 2) {
+                let result = 1;
+                for (let count = 0; count < exponent; count++) {
+                    result *= base;
+                }
+                return result;
+            }
+            
+            console.log(power(4));
+            console.log(power(2, 6));
+
+            console.log("C", "0", 2);
+        }
+        console.log("\n");
+
+        // closure
+        console.log("closure ->\n");
+        {
+            function wrapValue(n) {
+                let local = n;
+                return () => local;
+            }
+            
+            let wrap1 = wrapValue(1);
+            let wrap2 = wrapValue(2);
+            console.log(wrap1());
+            console.log(wrap2());
+
+            function multiplier(factor) {
+                return number => number * factor;
+            }
+
+            let twice = multiplier(2);
+            console.log(twice(5));
+        }
+        console.log("\n");
+
+        // recursion
+        console.log("recursion ->\n");
+        {
+            function power(base, exponent) {
+                if (exponent == 0) {
+                    return 1;
+                }
+                else {
+                    return base * power(base, exponent - 1);
+                }
+            }
+            console.log(power(2, 3));
+
+            function findSolution(target) {
+                function find(current, history) {
+                    if (current == target) {
+                        return history;
+                    }
+                    else if (current > target) {
+                        return null;
+                    }
+                    else {
+                        return find(current + 5, `(${history} + 5)`) ||
+                            find(current * 3, `(${history} * 3)`);
+                    }
+                }
+
+                return find(1, "1");
+            }
+            console.log(findSolution(24));
+        }
+        console.log("\n");
+
+        // growing fuctions
+        console.log("growing functions ->\n");
+        {
+            function printFarmInventory(cows, chickens) {
+                let cowString = String(cows);
+                while (cowString.length < 3) {
+                    cowString = "0" + cowString;
+                }
+                console.log(`${cowString} Cows`);
+
+                let chickenString = String(chickens);
+                while (chickenString.length < 3) {
+                    chickenString = "0" + chickenString;
+                }
+                console.log(`${chickenString} Chickens`);
+            }
+
+            console.log("the 1-st attempt: ");
+            printFarmInventory(7, 11);
+            console.log("\n");
+
+            function printZeroPaddedWithLabel(num, label) {
+                let numStr = String(num);
+                while (numStr.length < 3)
+                    numStr = "0" + numStr;
+                console.log(`${numStr} ${label}`);
+            }
+
+            function printFarmInventory2(cows, chickens, pigs) {
+                printZeroPaddedWithLabel(cows, "Cows");
+                printZeroPaddedWithLabel(chickens, "Chickens");
+                printZeroPaddedWithLabel(pigs, "Pigs");
+            }
+
+            console.log("the 2-nd attempt: ");
+            printFarmInventory2(7, 11, 3);
+            console.log("\n");
+
+            function zeroPad(num, width) {
+                let str = String(num);
+                while (str.length < width)
+                    str = "0" + str;
+                return str;
+            }
+
+            function printFarmInventory3(cows, chickens, pigs) {
+                console.log(`${zeroPad(cows, 3)} Cows`);
+                console.log(`${zeroPad(chickens, 3)} Chickens`);
+                console.log(`${zeroPad(pigs, 3)} Pigs`);
+            }
+
+            console.log("the 3-d attempt: ");
+            printFarmInventory3(7, 16, 3);
+            console.log("\n");
+        }
+        console.log("\n");
+
+        console.log("summary ->\n");
+        {
+            const f = function(a) {
+                console.log(a + 2);
+            };
+            f(42);
+
+            function g(a, b) {
+                return a * b * 3.5;
+            }
+            console.log(g(17, 42));
+
+            let h = a => a % 3;
+            console.log(h(42));
+        }
+        console.log("\n");
+    }
+    </script>
+</head>
+<body></body>
+</html>

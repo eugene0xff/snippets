@@ -1,0 +1,151 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>01</title>
+
+    <script type="text/javascript"> 
+    window.onload = function() {
+        // Numbers
+        console.log("[Numbers] ->");
+        {
+            console.log(13);
+            console.log(9.81);
+            console.log(2.998e8); 
+        }
+        console.log("");
+
+        // Arithmetic
+        console.log("[Arithmetic] ->");
+        {
+            console.log(100 + 4 * 11);
+            console.log((100 + 4) * 11);
+            console.log(1 - 2 + 1);
+            console.log((1 - 2) + 1);
+
+            console.log(314 % 100);
+            console.log(144 % 12);
+        }
+        console.log("");
+
+        // Special numbers
+        console.log("[Special numbers] ->");
+        {
+            console.log(Infinity);
+            console.log(NaN);
+            console.log(Infinity - 1);
+            console.log(Infinity + 1);
+            console.log(Infinity * 1);
+            console.log(Infinity / 1);
+            console.log(Infinity - Infinity);
+            console.log(Infinity + Infinity);
+            console.log(Infinity * Infinity);
+            console.log(Infinity / Infinity); 
+            console.log(0 / 0);
+            console.log(0 * Infinity);
+            console.log(0 / Infinity);
+            console.log(Infinity / 0);
+        }
+        console.log("");
+
+        // Strings
+        console.log("[Strings] ->");
+        {
+            console.log(`Down on the sea`);
+            console.log("Lie on the ocean");
+            console.log('Float on the ocean');
+
+            console.log("This is the first line\nAnd this is the second");
+
+            console.log("A newline character is written linke \"\\n\".");
+
+            console.log("con" + "cat" + "e" + "nate");
+
+            console.log(`half of 100 is ${100 / 2}`);
+        }
+        console.log("");
+
+        // Unary operators
+        console.log("[Unary operators] ->");
+        {
+            console.log(typeof 4.5);
+            console.log(typeof "x");
+            console.log(- (10 - 2)); 
+        }
+        console.log("");
+
+        // Comparison
+        console.log("[Comparison] ->");
+        {
+            console.log(3 > 2);
+            console.log(3 < 2);
+
+            console.log("Aardvark" < "Zoroaster");
+
+            console.log("Garnet" != "Ruby");
+            console.log("Pearl" == "Amethyst");
+
+            console.log(NaN == NaN);
+        }
+        console.log("");
+ 
+        // Logical operators
+        console.log("[Logical operators] ->");
+        {
+            console.log(true && false);
+            console.log(true && true);
+            console.log(false || true);
+            console.log(false || false);
+            console.log(!true);
+            console.log(!false);
+
+            console.log(1 + 1 == 2 && 10 * 10 > 50);
+
+            console.log(true ? 1 : 2);
+            console.log(false ? 1 : 2);
+        }
+        console.log("");
+
+        // Empty values
+        console.log("[Empty values] ->");
+        {
+            console.log(null);
+            console.log(undefined);
+        }
+        console.log("");
+
+        // Automatic type convertions
+        console.log("[Automatic type convertions] ->");
+        {
+            console.log(8 * null);
+            console.log("5" - 1);
+            console.log("5" + 1);
+            console.log("five" * 2);
+            console.log(false == 0);
+
+            console.log(null == undefined);
+            console.log(null == 0);
+            console.log(undefined == 0);
+ 
+            console.log(0 == false);
+            console.log("" == false);
+            console.log(0 === false);
+            console.log(0 === null);
+        }
+        console.log("");
+
+        // Short-circuiting of logical operators
+        console.log("[Short-circuiting of logical operators] ->");
+        {
+            console.log(null || "user");
+            console.log("Agnes" || "user");
+
+            console.log(0 || 100);
+            console.log(0 ?? 100);
+            console.log(null ?? 100);
+        }
+        console.log("");
+    }
+    </script>
+</head>
+<body></body>
+</html>
