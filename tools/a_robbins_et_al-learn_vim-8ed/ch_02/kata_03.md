@@ -1,4 +1,4 @@
-# kata "Simple Edits"
+# Kata - Simple Edits
 text:
 ```
 With a editor you can scrooll the
@@ -12,11 +12,11 @@ screen editors are very popular.
 ```
 
 kata:
-- ESC
-- `1G`
-- `2w`, `i`, type "screen ", ESC, `4w`, `3l`, `x`
-- `j`, `W`, `cw`, type "insert", ESC
-- `j`, `2b`, `i`, type "seeing ", ESC
+- Esc
+- `gg` (`1gg`) (`1G`)
+- `2w`, `i`, type "screen ", Esc, `4w`, `3l`, `x`
+- `j`, `W`, `cw`, type "insert", Esc
+- `j`, `2b`, `i`, type "seeing ", Esc
 - `j`, `2h`, `r`, type 'e'
 - `j`, `0`, `r`, type 's'
 - `2j`, `$`, `r`, type '.'
