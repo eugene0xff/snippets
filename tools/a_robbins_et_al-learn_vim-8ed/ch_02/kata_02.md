@@ -7,7 +7,7 @@ cursor, delete lines, insert characters,
 
 kata:
 - Esc
-- `1gg` (`1G`)
+- `gg` (`1gg`) (`1G`)
 - `w`, `r`, type '.', `u`
 - `w`, `w`, `w`, `r`, type '.', `u`
 - `w`, `w`, `w`, `r`, type '.', `u`
