@@ -11,4 +11,3 @@ kata:
 - `cw`, type "a screen", Esc
 - `2gg` (`2G`), `/i`, Enter, `cw`, type "ed", Esc
 
-
