@@ -1,4 +1,4 @@
-# kata "Changing lines"
+# Kata - Changing lines
 text:
 ```
 1 text text text
@@ -7,9 +7,6 @@ text:
 ```
 
 kata:
-- ESC
-- `gg`, `cc`, type "01 new text", ESC
-- `2gg`, `2cc`, type "01 new text<--CR-->02 new text", ESC
-
-
-
+- Esc
+- `gg` (`1gg`) (`1G`), `cc`, type "01 new text", Esc
+- `2gg` (`2G`), `2cc`, type "01 new text<Enter>02 new text", Esc
