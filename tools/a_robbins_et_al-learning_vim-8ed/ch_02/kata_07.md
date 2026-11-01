@@ -1,13 +1,9 @@
-# kata "Changing lines (to the end of a line - 02)"
+# Kata - Changing lines (to the end of a line - 02)
 text:
 ```
 text text text
 ```
 
 kata:
-- ESC
-- `gg`, `w`, `C`, type "new_text", ESC
-
-
-
-
+- Esc
+- `gg` (`1gg`) (`1G`), `w`, `C`, type "new_text", Esc
