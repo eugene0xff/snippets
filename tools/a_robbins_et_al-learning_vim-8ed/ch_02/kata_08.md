@@ -1,13 +1,9 @@
-# kata "Changing characters"
+# Kata - Changing characters
 text:
 ```
 Pith a screen editor you can scroll the page,
 ```
 
 kata:
-- ESC
-- `gg`, `r`, `W`
-
-
-
-
+- Esc
+- `gg` (`1gg`) (`1G`), `r`, `W`
