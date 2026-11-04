@@ -1,4 +1,4 @@
-# kata "Changing case"
+# Kata - Changing case
 text:
 ```
 text text text
@@ -6,6 +6,6 @@ text text text
 ```
 
 kata:
-- ESC
-- `gg`, `~`
-- `2gg, `100~`
+- Esc
+- `gg` (`1gg`) (`1G`), `~`
+- `2gg` (`2G`), `100~`
