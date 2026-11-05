@@ -5,6 +5,3 @@ changes as you rReEaAdD through a file.
 changes as you read through a file.
 changes as you read through a file.
 this doesn't compute.
-
-
-
