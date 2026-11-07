@@ -1,0 +1,1 @@
+g++ -fmodules -std=c++23 --compile-std-module main.cpp -o main.exe -static -static-libgcc -static-libstdc++ -lstdc++exp
