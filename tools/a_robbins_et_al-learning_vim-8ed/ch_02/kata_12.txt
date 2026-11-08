@@ -1,5 +1,3 @@
 Screen editors are are very popular,
 since they allow you to make
 changes as you read through a file.
-
-
